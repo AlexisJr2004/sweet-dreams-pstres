@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yum | Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" href="static/img/icono.png" type="image/x-icon">
+
+</head>
+
+<body class="bg-gray-50">
+    <!-- Overlay for mobile menu -->
+    <div id="mobile-overlay" class="overlay" onclick="closeMobileMenu()"></div>
+
+    <div class="fixed-layout">
+        <!-- Menú lateral -->
+        <aside id="mobile-sidebar" class="sidebar bg-white border border-gray-300 lg:block">
+            <!-- Logo -->
+            <img src="static/img/logo.png" alt="Logo" class="mt-3 mx-auto h-10 w-50 object-cover">
+            <div class="p-6">
+                <hr>
+                <!-- Menú de navegación -->
+                <nav class="mt-8 space-y-1">
+                    <a href="index.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-lg active">
+                        <span class="material-icons-outlined text-lg">grid_view</span>
+                        <span class="ml-4">Panel Principal</span>
+                    </a>
+                    <a href="#platos"
+                        class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg">
+                        <span class="material-icons-outlined text-lg">restaurant_menu</span>
+                        <span class="ml-4">Platos</span>
+                    </a>
+                    <a href="#postres"
+                        class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg">
+                        <span class="material-icons-outlined text-lg">cake</span>
+                        <span class="ml-4">Postres</span>
+                    </a>
+                </nav>
+
+                <!-- Sección de Soporte -->
+                <div class="mt-8 bg-orange-50 p-4 rounded-lg text-center">
+                    <div class="flex justify-center items-center mb-3">
+                        <span class="material-icons-outlined text-orange-500 text-4xl">headset_mic</span>
+                    </div>
+                    <p class="text-sm text-gray-700">Mejora tu Plan. Descubre Más Aquí</p>
+                    <button class="mt-3 px-4 py-2 bg-orange-500 text-white rounded-lg w-full">Contactar Soporte</button>
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="fixed-header">
+                <div class="flex items-center justify-between bg-white p-4 border-b border-gray-300">
+                    <div class="flex items-center space-x-3">
+                        <!-- Mobile menu button -->
+                        <div class="lg:hidden">
+                            <button type="button" 
+                                    class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all duration-300"
+                                    onclick="toggleMobileMenu()" id="menu-button">
+                                <span class="material-icons-outlined">menu</span>
+                            </button>
+                        </div>
+
+                        <div class="h-8 w-8 bg-orange-100 flex items-center justify-center rounded-full">
+                            <span class="material-icons-outlined text-orange-500 text-lg">search</span>
+                        </div>
+                        <input type="text" placeholder="Search for items..."
+                            class="border border-gray-300 rounded-full px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none">
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="material-icons-outlined text-gray-400">notifications</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+                <!-- Main Widgets -->
+                <section class="grid grid-cols-12 gap-6">
+                    <h2 class="col-span-12 md:col-span-6 text-2xl font-bold mb-2">Inicio</h2>
+                </section>
+            
+                <section class="grid grid-cols-12 gap-6">
+                    <!-- Contenido Principal -->
+                    <div class="col-span-12 lg:col-span-8">
+                        <!-- Sección de la imagen -->
+                        <div class="bg-cover bg-center h-72 rounded-lg" style="background-image: url('https://www.recetasnestle.com.ec/sites/default/files/2022-06/ingredientes-comida-de-mar-parrilla.jpg')">
+                            <div class="bg-black bg-opacity-50 h-full rounded-lg flex items-center justify-center">
+                                <div class="text-white text-center px-4">
+                                    <h2 class="text-4xl font-bold mb-3">¡Atrévete a Probar!</h2>
+                                    <h3 class="text-3xl font-bold text-orange-500 mb-6">Nuestra Especialidad del Día</h3>
+                                    <p class="text-base mb-6">Descubre una explosión de sabores con nuestra especialidad del día. ¡Una experiencia culinaria que te hará regresar por más!</p>
+                                    <a href="https://wa.me/593993419178" target="_blank" class="mt-1 bg-orange-500 text-white px-5 py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300 shadow-md">
+                                        ¡Haz tu Pedido Ahora!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="platos" class="mt-4">
+                            <div class="bg-white rounded-lg shadow p-5">
+                                <h2 class="text-xl font-bold mb-3">Nuestros Platos</h2>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                                    <!-- Plato 1 -->
+                                    <div class="text-center">
+                                        <img src="static/img/lasaña.jpg" alt="Lasaña" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Lasaña</p>
+                                        <p class="text-orange-500 font-bold">$12.00</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Plato 2 -->
+                                    <div class="text-center">
+                                        <img src="static/img/sandwich pollo.jpg" alt="Sandwich de Pollo" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Sandwich de Pollo</p>
+                                        <p class="text-orange-500 font-bold">$8.50</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Plato 3 -->
+                                    <div class="text-center">
+                                        <img src="static/img/arroz pollo.jpg" alt="Arroz con Pollo" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Arroz con Pollo</p>
+                                        <p class="text-orange-500 font-bold">$10.00</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Plato 4 -->
+                                    <div class="text-center">
+                                        <img src="static/img/pollo gratinado.jpg" alt="Pollo Hornado" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Pollo Hornado con Papas</p>
+                                        <p class="text-orange-500 font-bold">$14.00</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Plato 5 -->
+                                    <div class="text-center">
+                                        <img src="static/img/empanadas de carne.png" alt="Empanada de carne" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Empanadas de Carne</p>
+                                        <p class="text-orange-500 font-bold">$5.00</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Plato 6 -->
+                                    <div class="text-center">
+                                        <img src="static/img/empanadas de pollo.png" alt="Empanada de pollo" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Empanadas de Pollo</p>
+                                        <p class="text-orange-500 font-bold">$5.00</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="postres" class="mt-4">
+                            <div class="bg-white rounded-lg shadow p-5">
+                                <h2 class="text-xl font-bold mb-3">Nuestros Postres</h2>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                                    <!-- Postre 1 -->
+                                    <div class="text-center">
+                                        <img src="static/img/queso de leche.jpg" alt="Queso de Leche" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Queso de Leche</p>
+                                        <p class="text-orange-500 font-bold">$6.00</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Postre 2 -->
+                                    <div class="text-center">
+                                        <img src="static/img/torta de 3 leches.png" alt="Torta de 3 Leches" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Torta de 3 Leches</p>
+                                        <p class="text-orange-500 font-bold">$10.00</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Postre 3 -->
+                                    <div class="text-center">
+                                        <img src="static/img/torta de chocolate mojada.png" alt="Torta de Chocolate Mojada" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Torta de Chocolate Mojada</p>
+                                        <p class="text-orange-500 font-bold">$9.00</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Postre 4 -->
+                                    <div class="text-center">
+                                        <img src="static/img/flan con gelatina.png" alt="Flan con Gelatina" class="rounded-lg h-48 w-full object-cover mb-2">
+                                        <p class="text-gray-700 font-medium">Flan con Gelatina</p>
+                                        <p class="text-orange-500 font-bold">$7.50</p>
+                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                            Ordenar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            
+                    <div class="col-span-12 lg:col-span-4 lg:sticky lg:top-10 lg:self-start">
+                        <div class="bg-white rounded-lg shadow p-5">
+                            <h2 class="text-xl font-bold mb-3">Créditos Gastronómicos</h2>
+                            <div class="flex flex-col sm:flex-row items-center justify-between mb-4">
+                                <button class="bg-orange-100 text-orange-500 px-3 py-1 rounded-lg hover:bg-orange-200 transition-colors duration-300 mb-2 sm:mb-0">Comprar Créditos</button>
+                                <button class="bg-orange-100 text-orange-500 px-3 py-1 rounded-lg hover:bg-orange-200 transition-colors duration-300">Canjear</button>
+                            </div>
+                            <div class="bg-orange-500 text-white px-5 py-3 rounded-lg text-center">
+                                <p class="text-xl font-bold">$120.50</p>
+                                <p class="text-sm">Válidos para tus próximos pedidos</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-5 mt-4">
+                            <h2 class="text-xl font-bold mb-3">Restaurantes Favoritos</h2>
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <img src="static/img/samaritano.jpg" alt="Restaurant Logo" class="w-10 h-10 rounded-full mr-3">
+                                    <div>
+                                        <p class="font-semibold text-gray-700">El Samaritano</p>
+                                        <p class="text-gray-500 text-sm">Coffe House</p>
+                                    </div>
+                                </div>
+                                <button class="bg-orange-100 text-orange-500 px-3 py-1 rounded-lg hover:bg-orange-200 transition-colors duration-300">
+                                    <a target="_blank" href="https://www.facebook.com/p/El-Samaritano-Coffe-House-100064105806341/?locale=es_LA">Visitar</a>
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img src="static/img//parrilladas wagyu.jpg" alt="Restaurant Logo" class="w-10 h-10 rounded-full mr-3">
+                                    <div>
+                                        <p class="font-semibold text-gray-700">Parrillas El Wagyu</p>
+                                        <p class="text-gray-500 text-sm">Parrilladas</p>
+                                    </div>
+                                </div>
+                                <button class="bg-orange-100 text-orange-500 px-3 py-1 rounded-lg hover:bg-orange-200 transition-colors duration-300">
+                                    <a target="_blank" href="https://www.facebook.com/parrilladastelejardinelwagyu/?locale=es_LA">Visitar</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-12">
+                        <footer class="text-gray-400 py-6">
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <p class="text-sm text-center">
+                                    Diseño 2024 y elaborado con 
+                                    <span class="text-red-500">❤️</span> por 
+                                    <span class="text-orange-400 font-semibold">Alex Duran</span>
+                                </p>
+                            </div>
+                        </footer>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+<script src="static/js/main.js"></script>
+
+</html>
