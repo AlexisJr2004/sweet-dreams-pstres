@@ -26,145 +26,191 @@
                 <hr>
                 <!-- Menú de navegación -->
                 <nav class="mt-8 space-y-1">
-                    <a href="index.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-lg active">
-                        <span class="material-icons-outlined text-lg">grid_view</span>
-                        <span class="ml-4">Panel Principal</span>
+                    <a href="#home" class="active block px-4 py-2 text-gray-700 hover:bg-orange-50 rounded-lg transition-colors group">
+                        <span class="material-icons-outlined text-orange-500 mr-3">grid_view</span>
+                        Panel Principal
                     </a>
-                    <a href="#platos"
-                        class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg">
-                        <span class="material-icons-outlined text-lg">restaurant_menu</span>
-                        <span class="ml-4">Platos</span>
+                    <a href="#platos" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors group">
+                        <span class="material-icons-outlined text-orange-500 mr-3">restaurant_menu</span>
+                        Platos
                     </a>
-                    <a href="#postres"
-                        class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg">
-                        <span class="material-icons-outlined text-lg">cake</span>
-                        <span class="ml-4">Postres</span>
+                    <a href="#postres" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors group">
+                        <span class="material-icons-outlined text-orange-500 mr-3">cake</span>
+                        Postres
                     </a>
                 </nav>
-
-                <!-- Sección de Soporte -->
-                <div class="mt-8 bg-orange-50 p-4 rounded-lg text-center">
-                    <div class="flex justify-center items-center mb-3">
-                        <span class="material-icons-outlined text-orange-500 text-4xl">headset_mic</span>
+            </div>
+        
+            <!-- Support Section -->
+            <div class="absolute bottom-0 w-full p-12">
+                <div class="bg-orange-50 p-5 rounded-xl text-center blur-bg">
+                    <div class="flex justify-center mb-4">
+                        <span class="rounded-full bg-white p-3 material-icons-outlined text-orange-500 text-4xl">headset_mic</span>
                     </div>
-                    <p class="text-sm text-gray-700">Mejora tu Plan. Descubre Más Aquí</p>
-                    <button class="mt-3 px-4 py-2 bg-orange-500 text-white rounded-lg w-full">Contactar Soporte</button>
+                    <p class="text-sm text-gray-700 mb-4">Contáctanos directamente</p>
+                    <a href="https://wa.me/593993419178" target="_blank" 
+                       class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors shadow-md flex items-center justify-center">
+                        <span class="material-icons-outlined mr-2">chat</span>
+                        Contactar
+                    </a>
                 </div>
-
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="fixed-header">
-                <div class="flex items-center justify-between bg-white p-4 border-b border-gray-300">
-                    <div class="flex items-center space-x-3">
-                        <!-- Mobile menu button -->
-                        <div class="lg:hidden">
-                            <button type="button" 
-                                    class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all duration-300"
-                                    onclick="toggleMobileMenu()" id="menu-button">
-                                <span class="material-icons-outlined">menu</span>
-                            </button>
-                        </div>
+            <header class="bg-white fixed-header">
+                
+                <!-- Contenedor principal con flexbox -->
+                <header class="m-1 flex justify-between items-center w-full">
+                    <!-- Logo centrado -->
+                    <img src="static/img/logo.png" alt="Logo" class="h-12 w-auto object-cover block mx-auto lg:hidden">
 
-                        <div class="h-8 w-8 bg-orange-100 flex items-center justify-center rounded-full">
-                            <span class="material-icons-outlined text-orange-500 text-lg">search</span>
+                    <!-- Botón del menú móvil, alineado a la derecha -->
+                    <button type="button" class="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all duration-300 absolute right-0" onclick="toggleMobileMenu()" id="menu-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </header>
+
+                <div class="flex flex-wrap items-center justify-between bg-white p-4 border-b border-gray-300">
+                    <div class="flex items-center space-x-3 w-full lg:w-auto">
+                        <!-- Mobile menu button -->
+
+            
+                        <!-- Search Bar -->
+                        <div class="flex-grow flex items-center space-x-3">
+                            <div class="h-8 w-8 bg-orange-100 flex items-center justify-center rounded-full">
+                                <span class="material-icons-outlined text-orange-500 text-lg">search</span>
+                            </div>
+                            <input type="text" placeholder="Buscar platos o postres..."
+                                class="flex-grow border border-gray-300 rounded-full px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none">
                         </div>
-                        <input type="text" placeholder="Search for items..."
-                            class="border border-gray-300 rounded-full px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none">
                     </div>
-                    <div class="flex items-center space-x-4">
+            
+                    <!-- Contact Information -->
+                    <div class="flex flex-wrap items-center justify-between w-full lg:w-auto space-y-2 lg:space-y-0 lg:space-x-9 mt-2 lg:mt-0">
                         <div class="flex items-center space-x-2">
-                            <span class="material-icons-outlined text-gray-400">notifications</span>
+                            <span class="material-icons-outlined text-orange-500">location_on</span>
+                            <span class="text-sm">Guayas, Naranjal</span>
+                        </div>
+                        <a href="https://wa.me/593993419178" target="_blank" class="flex items-center space-x-2">
+                            <span class="material-icons-outlined text-orange-500">phone</span>
+                            <span class="text-sm">+593 99 341 9178</span>
+                        </a>                        
+                    </div>
+            
+                    <!-- Schedule and Social Icons -->
+                    <div class="flex flex-wrap items-center justify-center w-full lg:w-auto space-y-2 lg:space-y-0 lg:space-x-9 mt-2 lg:mt-0">
+                        <div class="flex items-center space-x-2">
+                            <span class="material-icons-outlined text-orange-500">schedule</span>
+                            <span class="text-sm text-gray-700">
+                                Lun - Dom: 10:00 A.M - 18:00 P.M
+                            </span>
                         </div>
                     </div>
                 </div>
             </header>
             
+            
             <!-- Scrollable Content -->
             <div class="scrollable-content">
-                <!-- Main Widgets -->
-                <section class="grid grid-cols-12 gap-6">
-                    <h2 class="col-span-12 md:col-span-6 text-2xl font-bold mb-2">Inicio</h2>
-                </section>
-            
-                <section class="grid grid-cols-12 gap-6">
+                <!-- Main Widgets -->           
+                <section id="home" class="gap-6">
                     <!-- Contenido Principal -->
                     <div class="col-span-12 lg:col-span-8">
                         <!-- Sección de la imagen -->
-                        <div class="bg-cover bg-center h-72 rounded-lg" style="background-image: url('https://www.recetasnestle.com.ec/sites/default/files/2022-06/ingredientes-comida-de-mar-parrilla.jpg')">
-                            <div class="bg-black bg-opacity-50 h-full rounded-lg flex items-center justify-center">
-                                <div class="text-white text-center px-4">
-                                    <h2 class="text-4xl font-bold mb-3">¡Atrévete a Probar!</h2>
-                                    <h3 class="text-3xl font-bold text-orange-500 mb-6">Nuestra Especialidad del Día</h3>
-                                    <p class="text-base mb-6">Descubre una explosión de sabores con nuestra especialidad del día. ¡Una experiencia culinaria que te hará regresar por más!</p>
-                                    <a href="https://wa.me/593993419178" target="_blank" class="mt-1 bg-orange-500 text-white px-5 py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300 shadow-md">
-                                        ¡Haz tu Pedido Ahora!
-                                    </a>
+                        <div id="promo-container" class=" opacity-0 transition-all duration-500">
+                            <div class="bg-cover bg-center h-72 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-[1.02]" 
+                                 style="background-image: url('https://www.recetasnestle.com.ec/sites/default/files/2022-06/ingredientes-comida-de-mar-parrilla.jpg')">
+                                <div class="bg-black bg-opacity-50 h-full rounded-lg flex items-center justify-center">
+                                    <div class="text-white text-center px-4">
+                                        <h2 id="title" class="text-4xl font-bold mb-3 opacity-0 transform transition-all duration-500">¡Atrévete a Probar!</h2>
+                                        <h3 id="subtitle" class="text-3xl font-bold text-orange-500 mb-6 opacity-0">Nuestra Especialidad del Día</h3>
+                                        <p id="description" class="text-base mb-6 opacity-0">Descubre una explosión de sabores con nuestra especialidad del día. ¡Una experiencia culinaria que te hará regresar por más!</p>
+                                        <a id="order-button" href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-1 bg-orange-500 text-white px-5 py-3 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 shadow-md opacity-0 
+                                                  transform hover:scale-110 active:scale-95">
+                                            ¡Haz tu Pedido Ahora!
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div id="platos" class="mt-4">
                             <div class="bg-white rounded-lg shadow p-5">
                                 <h2 class="text-xl font-bold mb-3">Nuestros Platos</h2>
-                                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                                    <!-- Plato 1 -->
-                                    <div class="text-center">
-                                        <img src="static/img/lasaña.jpg" alt="Lasaña" class="rounded-lg h-48 w-full object-cover mb-2">
+                                <div id="dish-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                                    <!-- Dish 1: Lasaña -->
+                                    <div class="dish-card text-center opacity-0">
+                                        <img src="static/img/lasaña.jpg" alt="Lasaña" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Lasaña</p>
                                         <p class="text-orange-500 font-bold">$12.00</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                     
-                                    <!-- Plato 2 -->
-                                    <div class="text-center">
-                                        <img src="static/img/sandwich pollo.jpg" alt="Sandwich de Pollo" class="rounded-lg h-48 w-full object-cover mb-2">
+                                    <!-- Dish 2: Sandwich de Pollo -->
+                                    <div class="dish-card text-center opacity-0">
+                                        <img src="static/img/sandwich pollo.jpg" alt="Sandwich de Pollo" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Sandwich de Pollo</p>
                                         <p class="text-orange-500 font-bold">$8.50</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                     
-                                    <!-- Plato 3 -->
-                                    <div class="text-center">
-                                        <img src="static/img/arroz pollo.jpg" alt="Arroz con Pollo" class="rounded-lg h-48 w-full object-cover mb-2">
+                                    <!-- Dish 3: Arroz con Pollo -->
+                                    <div class="dish-card text-center opacity-0">
+                                        <img src="static/img/arroz pollo.jpg" alt="Arroz con Pollo" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Arroz con Pollo</p>
                                         <p class="text-orange-500 font-bold">$10.00</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                     
-                                    <!-- Plato 4 -->
-                                    <div class="text-center">
-                                        <img src="static/img/pollo gratinado.jpg" alt="Pollo Hornado" class="rounded-lg h-48 w-full object-cover mb-2">
+                                    <!-- Dish 4: Pollo Hornado -->
+                                    <div class="dish-card text-center opacity-0">
+                                        <img src="static/img/pollo gratinado.jpg" alt="Pollo Hornado" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Pollo Hornado con Papas</p>
                                         <p class="text-orange-500 font-bold">$14.00</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                     
-                                    <!-- Plato 5 -->
-                                    <div class="text-center">
-                                        <img src="static/img/empanadas de carne.png" alt="Empanada de carne" class="rounded-lg h-48 w-full object-cover mb-2">
+                                    <!-- Dish 5: Empanadas de Carne -->
+                                    <div class="dish-card text-center opacity-0">
+                                        <img src="static/img/empanadas de carne.png" alt="Empanada de carne" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Empanadas de Carne</p>
                                         <p class="text-orange-500 font-bold">$5.00</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                     
-                                    <!-- Plato 6 -->
-                                    <div class="text-center">
-                                        <img src="static/img/empanadas de pollo.png" alt="Empanada de pollo" class="rounded-lg h-48 w-full object-cover mb-2">
+                                    <!-- Dish 6: Empanadas de Pollo -->
+                                    <div class="dish-card text-center opacity-0">
+                                        <img src="static/img/empanadas de pollo.png" alt="Empanada de pollo" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Empanadas de Pollo</p>
                                         <p class="text-orange-500 font-bold">$5.00</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
@@ -175,95 +221,62 @@
                         <div id="postres" class="mt-4">
                             <div class="bg-white rounded-lg shadow p-5">
                                 <h2 class="text-xl font-bold mb-3">Nuestros Postres</h2>
-                                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                                    <!-- Postre 1 -->
-                                    <div class="text-center">
-                                        <img src="static/img/queso de leche.jpg" alt="Queso de Leche" class="rounded-lg h-48 w-full object-cover mb-2">
+                                <div id="dessert-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                                    <!-- Dessert 1: Queso de Leche -->
+                                    <div class="dessert-card text-center opacity-0">
+                                        <img src="static/img/queso de leche.jpg" alt="Queso de Leche" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Queso de Leche</p>
                                         <p class="text-orange-500 font-bold">$6.00</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                     
-                                    <!-- Postre 2 -->
-                                    <div class="text-center">
-                                        <img src="static/img/torta de 3 leches.png" alt="Torta de 3 Leches" class="rounded-lg h-48 w-full object-cover mb-2">
+                                    <!-- Dessert 2: Torta de 3 Leches -->
+                                    <div class="dessert-card text-center opacity-0">
+                                        <img src="static/img/torta de 3 leches.png" alt="Torta de 3 Leches" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Torta de 3 Leches</p>
                                         <p class="text-orange-500 font-bold">$10.00</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                     
-                                    <!-- Postre 3 -->
-                                    <div class="text-center">
-                                        <img src="static/img/torta de chocolate mojada.png" alt="Torta de Chocolate Mojada" class="rounded-lg h-48 w-full object-cover mb-2">
+                                    <!-- Dessert 3: Torta de Chocolate Mojada -->
+                                    <div class="dessert-card text-center opacity-0">
+                                        <img src="static/img/torta de chocolate mojada.png" alt="Torta de Chocolate Mojada" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Torta de Chocolate Mojada</p>
                                         <p class="text-orange-500 font-bold">$9.00</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                     
-                                    <!-- Postre 4 -->
-                                    <div class="text-center">
-                                        <img src="static/img/flan con gelatina.png" alt="Flan con Gelatina" class="rounded-lg h-48 w-full object-cover mb-2">
+                                    <!-- Dessert 4: Flan con Gelatina -->
+                                    <div class="dessert-card text-center opacity-0">
+                                        <img src="static/img/flan con gelatina.png" alt="Flan con Gelatina" class="rounded-lg h-48 w-full object-cover mb-2 transition-transform duration-300 group-hover:scale-110">
                                         <p class="text-gray-700 font-medium">Flan con Gelatina</p>
                                         <p class="text-orange-500 font-bold">$7.50</p>
-                                        <a href="https://wa.me/593993419178" target="_blank" class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <a href="https://wa.me/593993419178" target="_blank" 
+                                           class="mt-2 bg-orange-500 text-white px-3 py-1 rounded-lg hover:bg-orange-600 
+                                                  transition-colors duration-300 transform hover:scale-105 active:scale-95">
                                             Ordenar
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-            
-                    <div class="col-span-12 lg:col-span-4 lg:sticky lg:top-10 lg:self-start">
-                        <div class="bg-white rounded-lg shadow p-5">
-                            <h2 class="text-xl font-bold mb-3">Créditos Gastronómicos</h2>
-                            <div class="flex flex-col sm:flex-row items-center justify-between mb-4">
-                                <button class="bg-orange-100 text-orange-500 px-3 py-1 rounded-lg hover:bg-orange-200 transition-colors duration-300 mb-2 sm:mb-0">Comprar Créditos</button>
-                                <button class="bg-orange-100 text-orange-500 px-3 py-1 rounded-lg hover:bg-orange-200 transition-colors duration-300">Canjear</button>
-                            </div>
-                            <div class="bg-orange-500 text-white px-5 py-3 rounded-lg text-center">
-                                <p class="text-xl font-bold">$120.50</p>
-                                <p class="text-sm">Válidos para tus próximos pedidos</p>
-                            </div>
-                        </div>
-                        <div class="bg-white rounded-lg shadow p-5 mt-4">
-                            <h2 class="text-xl font-bold mb-3">Restaurantes Favoritos</h2>
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center">
-                                    <img src="static/img/samaritano.jpg" alt="Restaurant Logo" class="w-10 h-10 rounded-full mr-3">
-                                    <div>
-                                        <p class="font-semibold text-gray-700">El Samaritano</p>
-                                        <p class="text-gray-500 text-sm">Coffe House</p>
-                                    </div>
-                                </div>
-                                <button class="bg-orange-100 text-orange-500 px-3 py-1 rounded-lg hover:bg-orange-200 transition-colors duration-300">
-                                    <a target="_blank" href="https://www.facebook.com/p/El-Samaritano-Coffe-House-100064105806341/?locale=es_LA">Visitar</a>
-                                </button>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center">
-                                    <img src="static/img//parrilladas wagyu.jpg" alt="Restaurant Logo" class="w-10 h-10 rounded-full mr-3">
-                                    <div>
-                                        <p class="font-semibold text-gray-700">Parrillas El Wagyu</p>
-                                        <p class="text-gray-500 text-sm">Parrilladas</p>
-                                    </div>
-                                </div>
-                                <button class="bg-orange-100 text-orange-500 px-3 py-1 rounded-lg hover:bg-orange-200 transition-colors duration-300">
-                                    <a target="_blank" href="https://www.facebook.com/parrilladastelejardinelwagyu/?locale=es_LA">Visitar</a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+        
 
                     <div class="col-span-12">
-                        <footer class="text-gray-400 py-6">
+                        <footer class="text-gray-400 py-12">
                             <div class="flex flex-col items-center justify-center h-full">
                                 <p class="text-sm text-center">
                                     Diseño 2024 y elaborado con 
